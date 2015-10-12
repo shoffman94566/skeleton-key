@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:id="@+id/create_layout">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Site Name"
+            android:id="@+id/textView" android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/site_name" android:layout_alignParentTop="true" android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" android:layout_toRightOf="@+id/textView"
+            android:layout_toEndOf="@+id/textView"/>
+    <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="lower case"
+            android:id="@+id/lower_case_checkbox" android:layout_below="@+id/site_name" android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" android:checked="true"/>
+    <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="caps"
+            android:id="@+id/caps_checkbox"
+            android:layout_alignTop="@+id/lower_case_checkbox" android:layout_toRightOf="@+id/lower_case_checkbox"
+            android:layout_toEndOf="@+id/lower_case_checkbox" android:checked="true"/>
+    <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="numerals"
+            android:id="@+id/numerals_checkbox"
+            android:layout_below="@+id/site_name" android:layout_toRightOf="@+id/caps_checkbox"
+            android:layout_toEndOf="@+id/caps_checkbox" android:checked="true"/>
+    <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="symbols"
+            android:id="@+id/symbols_checkbox" android:layout_below="@+id/site_name"
+            android:layout_toRightOf="@+id/numerals_checkbox" android:layout_toEndOf="@+id/numerals_checkbox"
+            android:checked="true"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Generate Password"
+            android:id="@+id/generate_password_button"
+            android:layout_below="@+id/password_length" android:layout_toLeftOf="@+id/symbols_checkbox"
+            android:layout_toStartOf="@+id/symbols_checkbox"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/generated_password" android:layout_below="@+id/generate_password_button"
+            android:layout_alignLeft="@+id/generate_password_button"
+            android:layout_alignStart="@+id/generate_password_button"
+            android:layout_alignRight="@+id/generate_password_button"
+            android:layout_alignEnd="@+id/generate_password_button" android:text="generated Password"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/password_length"
+            android:layout_below="@+id/lower_case_checkbox" android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+</RelativeLayout>

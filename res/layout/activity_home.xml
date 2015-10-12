@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Title Text"
+            android:id="@+id/title_text_view" android:layout_alignParentTop="true" android:layout_centerHorizontal="true"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check Button"
+            android:id="@+id/check_button" android:layout_below="@+id/title_text_view" android:layout_centerHorizontal="true"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Button"
+            android:id="@+id/create_button" android:layout_below="@+id/check_button" android:layout_centerHorizontal="true"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Button"
+            android:id="@+id/change_button" android:layout_below="@+id/create_button" android:layout_centerHorizontal="true"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="closeApp"
+            android:id="@+id/close_button"
+            android:layout_alignParentBottom="true" android:layout_alignRight="@+id/title_text_view"
+            android:layout_alignEnd="@+id/title_text_view"/>
+</RelativeLayout>
