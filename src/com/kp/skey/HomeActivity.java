@@ -5,15 +5,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class HomeActivity extends Activity {
+public class HomeActivity extends FooterActivity {
     private View checkButton;
     private View changeButton;
     private View createButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        super.onCreate(savedInstanceState);
+
+        findViewById(R.id.main_menu).setVisibility(View.GONE);
 
         checkButton = findViewById(R.id.check_button);
         createButton = findViewById(R.id.create_button);

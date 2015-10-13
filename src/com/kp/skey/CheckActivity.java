@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class CheckActivity extends Activity {
+public class CheckActivity extends FooterActivity {
     private Button mGeneratePasswordButton;
     private TextView mCheckPasswordTextView;
     private EditText mCheckSiteNameEditText;
@@ -17,8 +17,8 @@ public class CheckActivity extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check);
+        super.onCreate(savedInstanceState);
         SharedPrefs.init(this);
 
         mGeneratePasswordButton = (Button) findViewById(R.id.check_password_button);

@@ -8,7 +8,7 @@ import android.widget.*;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class CreateActivity extends Activity {
+public class CreateActivity extends FooterActivity {
     private Button mGeneratePassword;
     private EditText mPasswordLength;
     private CheckBox mSymboldCheckbox;
@@ -21,8 +21,8 @@ public class CreateActivity extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create);
+        super.onCreate(savedInstanceState);
         SharedPrefs.init(this);
 
         mSiteName = (EditText) findViewById(R.id.check_site_name);

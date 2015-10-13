@@ -31,4 +31,9 @@
             android:id="@+id/close_button"
             android:layout_alignParentBottom="true" android:layout_alignRight="@+id/title_text_view"
             android:layout_alignEnd="@+id/title_text_view"/>
+    <include layout="@layout/footer"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentBottom="true" android:layout_alignParentLeft="true"
+             android:layout_alignParentStart="true"/>
 </RelativeLayout>
