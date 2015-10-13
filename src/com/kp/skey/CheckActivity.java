@@ -32,6 +32,7 @@ public class CheckActivity extends FooterActivity {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(CheckActivity.this, CreateActivity.class);
+                myIntent.putExtra("change", false);
                 CheckActivity.this.startActivity(myIntent);
             }
         });
