@@ -19,6 +19,7 @@ public class CreateActivity extends Activity {
     private CheckBox mlowercaseCheckbox;
     private EditText mSiteName;
     private TextView mGeneratedPasswordTextView;
+    private Button mRegeneratePassword;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,18 +35,28 @@ public class CreateActivity extends Activity {
         mPasswordLength = (EditText) findViewById(R.id.password_length);
 
         mGeneratePassword = (Button) findViewById(R.id.generate_password_button);
+        mRegeneratePassword = (Button) findViewById(R.id.regenerate_password_button);
         mGeneratedPasswordTextView = (TextView) findViewById(R.id.generated_password);
+        mRegeneratePassword.setVisibility(View.GONE);
 
         mGeneratePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                generatePassword();
+                generatePassword(false);
+
+            }
+        });
+
+        mRegeneratePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                generatePassword(true);
 
             }
         });
     }
 
-    private void generatePassword() {
+    private void generatePassword(boolean force) {
 
         String sitename = mSiteName.getText().toString();
 //        View view = instance.getCurrentFocus();
@@ -97,7 +108,7 @@ public class CreateActivity extends Activity {
             e.printStackTrace();
         }
 
-        if (SkeyApplication.containsKey(sitename)) {
+        if (SkeyApplication.containsKey(sitename) && !force) {
             Toast.makeText(
                     this,
                     "Password " + SkeyApplication.getMyMap(sitename)
@@ -106,6 +117,8 @@ public class CreateActivity extends Activity {
             return;
         }
         SkeyApplication.put(sitename, passkey);
+        mGeneratePassword.setVisibility(View.GONE);
+        mRegeneratePassword.setVisibility(View.VISIBLE);
         mGeneratedPasswordTextView.setText(passkey);
     }
 

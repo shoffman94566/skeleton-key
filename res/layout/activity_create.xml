@@ -54,11 +54,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/generated_password" android:layout_below="@+id/generate_password_button"
-            android:layout_alignLeft="@+id/generate_password_button"
-            android:layout_alignStart="@+id/generate_password_button"
-            android:layout_alignRight="@+id/generate_password_button"
-            android:layout_alignEnd="@+id/generate_password_button" android:text="generated Password"/>
+            android:id="@+id/generated_password"
+            android:text="generated Password" android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" android:layout_below="@+id/generate_password_button"
+            android:layout_alignParentLeft="true" android:layout_alignParentStart="true"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -66,5 +65,12 @@
             android:ems="10"
             android:id="@+id/password_length"
             android:layout_below="@+id/lower_case_checkbox" android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"/>
+            android:layout_alignParentStart="true" android:text="16"/>
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Regenerate Password"
+                android:id="@+id/regenerate_password_button" android:layout_below="@+id/generated_password"
+                android:layout_alignParentRight="true" android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true" android:layout_alignParentStart="true"/>
 </RelativeLayout>
