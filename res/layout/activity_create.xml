@@ -73,4 +73,9 @@
                 android:id="@+id/regenerate_password_button" android:layout_below="@+id/generated_password"
                 android:layout_alignParentRight="true" android:layout_alignParentEnd="true"
                 android:layout_alignParentLeft="true" android:layout_alignParentStart="true"/>
+        <include layout="@layout/footer"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentBottom="true" android:layout_alignParentLeft="true"
+                 android:layout_alignParentStart="true"/>
 </RelativeLayout>
