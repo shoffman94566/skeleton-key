@@ -33,6 +33,16 @@ public class HomeActivity extends FooterActivity {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(HomeActivity.this, CreateActivity.class);
+                myIntent.putExtra("change", false);
+                HomeActivity.this.startActivity(myIntent);
+            }
+        });
+
+        changeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(HomeActivity.this, CreateActivity.class);
+                myIntent.putExtra("change", true);
                 HomeActivity.this.startActivity(myIntent);
             }
         });

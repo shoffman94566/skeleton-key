@@ -1,6 +1,5 @@
 package com.kp.skey;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
@@ -18,6 +17,11 @@ public class CreateActivity extends FooterActivity {
     private EditText mSiteName;
     private TextView mGeneratedPasswordTextView;
     private Button mRegeneratePassword;
+    private boolean mChangeValue;
+    private TextView mTitle;
+    private TextView mChangeTextHelp;
+    private TextView mPreviousPassword;
+    private String oldPassword;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -25,6 +29,9 @@ public class CreateActivity extends FooterActivity {
         super.onCreate(savedInstanceState);
         SharedPrefs.init(this);
 
+        mChangeValue = getIntent().getExtras().getBoolean("change", false);
+
+        mTitle = (TextView) findViewById(R.id.create_title);
         mSiteName = (EditText) findViewById(R.id.check_site_name);
         mlowercaseCheckbox = (CheckBox) findViewById(R.id.lower_case_checkbox);
         mCapsCheckbox = (CheckBox) findViewById(R.id.caps_checkbox);
@@ -37,10 +44,25 @@ public class CreateActivity extends FooterActivity {
         mGeneratedPasswordTextView = (TextView) findViewById(R.id.generated_password);
         mRegeneratePassword.setVisibility(View.GONE);
 
+        mPreviousPassword = (TextView) findViewById(R.id.previous_password);
+        mPreviousPassword.setVisibility(View.GONE);
+        mChangeTextHelp = (TextView) findViewById(R.id.change_text_help);
+        mChangeTextHelp.setVisibility(View.GONE);
+
+        // different setup if change screen
+        if (mChangeValue) {
+          mTitle.setText("To Change a U-U Password");
+        }
+
         mGeneratePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                generatePassword(false);
+                if(mChangeValue) {
+                    updatePreviousPassword();
+                    generatePassword(true);
+                } else {
+                    generatePassword(false);
+                }
 
             }
         });
@@ -48,10 +70,22 @@ public class CreateActivity extends FooterActivity {
         mRegeneratePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(mChangeValue) {
+                    updatePreviousPassword();
+                }
                 generatePassword(true);
 
             }
         });
+    }
+
+    private void updatePreviousPassword() {
+        String siteName = mSiteName.getText().toString();
+        oldPassword = SkeyApplication.getMyMap(siteName);
+        mPreviousPassword.setVisibility(View.VISIBLE);
+        String baseString = "Previous U-U  Password :";
+        String combinedString = baseString.concat(oldPassword);
+        mPreviousPassword.setText(combinedString);
     }
 
     private void generatePassword(boolean force) {
