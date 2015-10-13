@@ -1,10 +1,8 @@
 package com.kp.skey;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
 
 import java.security.MessageDigest;
@@ -27,14 +25,14 @@ public class CreateActivity extends Activity {
         setContentView(R.layout.activity_create);
         SharedPrefs.init(this);
 
-        mSiteName = (EditText) findViewById(R.id.site_name);
+        mSiteName = (EditText) findViewById(R.id.check_site_name);
         mlowercaseCheckbox = (CheckBox) findViewById(R.id.lower_case_checkbox);
         mCapsCheckbox = (CheckBox) findViewById(R.id.caps_checkbox);
         mNumeralsCheckbox = (CheckBox) findViewById(R.id.numerals_checkbox);
         mSymboldCheckbox = (CheckBox) findViewById(R.id.symbols_checkbox);
         mPasswordLength = (EditText) findViewById(R.id.password_length);
 
-        mGeneratePassword = (Button) findViewById(R.id.generate_password_button);
+        mGeneratePassword = (Button) findViewById(R.id.check_password_button);
         mRegeneratePassword = (Button) findViewById(R.id.regenerate_password_button);
         mGeneratedPasswordTextView = (TextView) findViewById(R.id.generated_password);
         mRegeneratePassword.setVisibility(View.GONE);

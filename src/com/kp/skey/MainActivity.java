@@ -6,8 +6,6 @@ import java.security.NoSuchAlgorithmException;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnFocusChangeListener;
@@ -43,7 +41,7 @@ public class MainActivity extends Activity {
 				WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 		SharedPrefs.init(this);
 		closeApp = (Button) findViewById(R.id.close);
-		enterSiteName = (EditText) findViewById(R.id.site_name);
+		enterSiteName = (EditText) findViewById(R.id.check_site_name);
 		enterSiteName.addTextChangedListener(Util.tw);
 		enterSiteNameCreate = (EditText) findViewById(R.id.site_name_create);
 		enterSiteNameCreate.addTextChangedListener(Util.tw);

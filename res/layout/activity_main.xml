@@ -88,7 +88,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/site_name"
+                    android:id="@+id/check_site_name"
                     android:layout_width="190dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/recalltext"
@@ -102,7 +102,7 @@
                     android:id="@+id/pass_recall_submit"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/site_name"
+                    android:layout_below="@id/check_site_name"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@id/enter_site"
                     android:lines="1"
@@ -113,7 +113,7 @@
                     android:id="@+id/pass_recall_show"
                     android:layout_width="190dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/site_name"
+                    android:layout_below="@id/check_site_name"
                     android:layout_marginLeft="5dp"
                     android:layout_toRightOf="@id/enter_site"
                     android:editable="false"
