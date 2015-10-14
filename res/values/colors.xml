@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="check_red">#70280C</color>
+    <color name="check_green">#009051</color>
+    <color name="create_brown">#9B4719</color>
+    <color name="change_blue">#0F253D</color>
+    <color name="home_red">#C5000E</color>
+</resources>

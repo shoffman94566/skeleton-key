@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FontSpannableTextView">
+        <attr name="fontspannabletextview_partialText" format="string" />
+        <attr name="fontspannabletextview_partialTextColor" format="color" />
+    </declare-styleable>
+</resources>
