@@ -68,11 +68,15 @@ public class CreateActivity extends FooterActivity {
         mGeneratePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Util.hideKeyboard(CreateActivity.this);
                 if (allCheckBoxesUnchecked()) {
                     return;
                 }
-
-                Util.hideKeyboard(CreateActivity.this);
+                
+                if (invalidPasswordLength()){
+                    return;
+                }
+                
                 if(mChangeValue) {
                     updatePreviousPassword();
                     generatePassword(true);
@@ -93,6 +97,17 @@ public class CreateActivity extends FooterActivity {
             }
         });
 
+    }
+
+    private boolean invalidPasswordLength() {
+        int length = mPasswordLength.getText().toString().length();
+        if (length < 5 || length > 16){
+            Toast.makeText(this,
+                    "Invalid Length",
+                    Toast.LENGTH_LONG).show();
+            return true;
+        }
+        return false;
     }
 
     private boolean allCheckBoxesUnchecked() {
