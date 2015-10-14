@@ -1,10 +1,7 @@
 package com.kp.skey;
 
-import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
 
 import java.security.MessageDigest;
@@ -13,7 +10,7 @@ import java.security.NoSuchAlgorithmException;
 public class CreateActivity extends FooterActivity {
     private Button mGeneratePassword;
     private EditText mPasswordLength;
-    private CheckBox mSymboldCheckbox;
+    private CheckBox mSymbolCheckbox;
     private CheckBox mNumeralsCheckbox;
     private CheckBox mCapsCheckbox;
     private CheckBox mlowercaseCheckbox;
@@ -26,6 +23,10 @@ public class CreateActivity extends FooterActivity {
     private TextView mPreviousPassword;
     private String oldPassword;
     private String mpassedSiteName;
+
+    private void validateAtLeastOneCheckBoxChecked() {
+
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,7 +42,7 @@ public class CreateActivity extends FooterActivity {
         mlowercaseCheckbox = (CheckBox) findViewById(R.id.lower_case_checkbox);
         mCapsCheckbox = (CheckBox) findViewById(R.id.caps_checkbox);
         mNumeralsCheckbox = (CheckBox) findViewById(R.id.numerals_checkbox);
-        mSymboldCheckbox = (CheckBox) findViewById(R.id.symbols_checkbox);
+        mSymbolCheckbox = (CheckBox) findViewById(R.id.symbols_checkbox);
         mPasswordLength = (EditText) findViewById(R.id.password_length);
 
         mGeneratePassword = (Button) findViewById(R.id.check_password_button);
@@ -67,6 +68,10 @@ public class CreateActivity extends FooterActivity {
         mGeneratePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (allCheckBoxesUnchecked()) {
+                    return;
+                }
+
                 Util.hideKeyboard(CreateActivity.this);
                 if(mChangeValue) {
                     updatePreviousPassword();
@@ -85,10 +90,19 @@ public class CreateActivity extends FooterActivity {
                     updatePreviousPassword();
                 }
                 generatePassword(true);
-
             }
         });
 
+    }
+
+    private boolean allCheckBoxesUnchecked() {
+        if (!mlowercaseCheckbox.isChecked() && !mCapsCheckbox.isChecked() && !mNumeralsCheckbox.isChecked() && !mSymbolCheckbox.isChecked()) {
+            Toast.makeText(this,
+                    "Invalid Entry",
+                    Toast.LENGTH_LONG).show();
+            return true;
+        }
+        return false;
     }
 
 
@@ -144,7 +158,7 @@ public class CreateActivity extends FooterActivity {
         String passkey = null;
         try {
             passkey = PasswordGenerator.generate(sitename,
-                    mNumeralsCheckbox.isChecked(), mSymboldCheckbox.isChecked(),
+                    mNumeralsCheckbox.isChecked(), mSymbolCheckbox.isChecked(),
                     mCapsCheckbox.isChecked(), len);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
