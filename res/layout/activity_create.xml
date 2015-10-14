@@ -1,108 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" android:id="@+id/create_layout">
+                android:layout_height="match_parent"
+                android:id="@+id/create_layout">
 
-    <TextView
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Site Name"
             android:id="@+id/textView"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" android:layout_below="@+id/create_title"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/create_title"
             android:layout_above="@+id/lower_case_checkbox"/>
-    <EditText
+        <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/check_site_name"
             android:singleLine="true"
-            android:layout_below="@+id/create_title" android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" android:layout_toRightOf="@+id/textView"
+            android:layout_below="@+id/create_title"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toRightOf="@+id/textView"
             android:layout_toEndOf="@+id/textView"/>
-    <CheckBox
+        <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="lower case"
-            android:id="@+id/lower_case_checkbox" android:layout_below="@+id/check_site_name" android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" android:checked="true"/>
-    <CheckBox
+            android:id="@+id/lower_case_checkbox"
+            android:layout_below="@+id/check_site_name"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="true"/>
+        <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="caps"
             android:id="@+id/caps_checkbox"
-            android:layout_alignTop="@+id/lower_case_checkbox" android:layout_toRightOf="@+id/lower_case_checkbox"
-            android:layout_toEndOf="@+id/lower_case_checkbox" android:checked="true"/>
-    <CheckBox
+            android:layout_alignTop="@+id/lower_case_checkbox"
+            android:layout_toRightOf="@+id/lower_case_checkbox"
+            android:layout_toEndOf="@+id/lower_case_checkbox"
+            android:checked="true"/>
+        <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="numerals"
             android:id="@+id/numerals_checkbox"
-            android:layout_below="@+id/check_site_name" android:layout_toRightOf="@+id/caps_checkbox"
-            android:layout_toEndOf="@+id/caps_checkbox" android:checked="true"/>
-    <CheckBox
+            android:layout_below="@+id/check_site_name"
+            android:layout_toRightOf="@+id/caps_checkbox"
+            android:layout_toEndOf="@+id/caps_checkbox"
+            android:checked="true"/>
+        <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="symbols"
-            android:id="@+id/symbols_checkbox" android:layout_below="@+id/check_site_name"
-            android:layout_toRightOf="@+id/numerals_checkbox" android:layout_toEndOf="@+id/numerals_checkbox"
+            android:id="@+id/symbols_checkbox"
+            android:layout_below="@+id/check_site_name"
+            android:layout_toRightOf="@+id/numerals_checkbox"
+            android:layout_toEndOf="@+id/numerals_checkbox"
             android:checked="true"/>
-    <Button
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Generate Password"
             android:id="@+id/check_password_button"
-            android:layout_below="@+id/password_length" android:layout_toLeftOf="@+id/symbols_checkbox"
+            android:layout_below="@+id/password_length"
+            android:layout_toLeftOf="@+id/symbols_checkbox"
             android:layout_toStartOf="@+id/symbols_checkbox"/>
-    <TextView
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/generated_password"
-            android:text="generated Password" android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" android:layout_below="@+id/check_password_button"
-            android:layout_alignParentLeft="true" android:layout_alignParentStart="true"/>
-    <EditText
+            android:text="generated Password"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/check_password_button"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+        <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/password_length"
-            android:layout_below="@+id/lower_case_checkbox" android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" android:text="16"/>
+            android:layout_below="@+id/lower_case_checkbox"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="16"/>
         <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Regenerate Password"
-                android:id="@+id/regenerate_password_button" android:layout_below="@+id/generated_password"
-                android:layout_alignParentRight="true" android:layout_alignParentEnd="true"
-                android:layout_alignParentLeft="true" android:layout_alignParentStart="true"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Regenerate Password"
+            android:id="@+id/regenerate_password_button"
+            android:layout_below="@+id/generated_password"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
         <include layout="@layout/footer"
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
-                 android:layout_alignParentBottom="true" android:layout_alignParentLeft="true"
-                 android:layout_alignParentStart="true"/>
-    <TextView
+                 android:layout_alignParentBottom="true"
+                 android:layout_centerHorizontal="true"/>
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Create a U-U Password"
-            android:id="@+id/create_title" android:layout_alignParentTop="true"
-            android:layout_alignRight="@+id/check_site_name" android:layout_alignEnd="@+id/check_site_name"
-            android:layout_alignParentLeft="true" android:layout_alignParentStart="true"/>
-    <TextView
+            android:id="@+id/create_title"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/check_site_name"
+            android:layout_alignEnd="@+id/check_site_name"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Previous Password U-U Password:"
-            android:id="@+id/previous_password" android:layout_below="@+id/regenerate_password_button"
-            android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
-            android:layout_alignRight="@+id/check_site_name" android:layout_alignEnd="@+id/check_site_name"/>
-    <TextView
+            android:id="@+id/previous_password"
+            android:layout_below="@+id/regenerate_password_button"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/check_site_name"
+            android:layout_alignEnd="@+id/check_site_name"/>
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Note: This is a new U-U  password for this site name. It will replace the previous U-U password.   "
-            android:id="@+id/change_text_help" android:layout_below="@+id/previous_password"
-            android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
-            android:layout_alignRight="@+id/check_site_name" android:layout_alignEnd="@+id/check_site_name"/>
+            android:id="@+id/change_text_help"
+            android:layout_below="@+id/previous_password"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/check_site_name"
+            android:layout_alignEnd="@+id/check_site_name"/>
 </RelativeLayout>
