@@ -41,6 +41,7 @@ public class CheckActivity extends FooterActivity {
             @Override
             public void onClick(View v) {
                 String siteName = mCheckSiteNameEditText.getText().toString();
+                Util.hideKeyboard(CheckActivity.this);
                 if (SkeyApplication.containsKey(siteName)) {
                     String password = SkeyApplication.getMyMap(siteName);
                     mCheckPasswordTextView.setText(password);

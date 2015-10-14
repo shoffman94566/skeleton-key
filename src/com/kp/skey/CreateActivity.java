@@ -1,7 +1,10 @@
 package com.kp.skey;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
 
 import java.security.MessageDigest;
@@ -57,6 +60,7 @@ public class CreateActivity extends FooterActivity {
         mGeneratePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Util.hideKeyboard(CreateActivity.this);
                 if(mChangeValue) {
                     updatePreviousPassword();
                     generatePassword(true);
@@ -70,14 +74,16 @@ public class CreateActivity extends FooterActivity {
         mRegeneratePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(mChangeValue) {
+                if (mChangeValue) {
                     updatePreviousPassword();
                 }
                 generatePassword(true);
 
             }
         });
+
     }
+
 
     private void updatePreviousPassword() {
         String siteName = mSiteName.getText().toString();
