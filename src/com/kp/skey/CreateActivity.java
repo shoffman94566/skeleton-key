@@ -1,6 +1,7 @@
 package com.kp.skey;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.*;
 
@@ -76,7 +77,7 @@ public class CreateActivity extends FooterActivity {
                 if (invalidPasswordLength()){
                     return;
                 }
-                
+
                 if(mChangeValue) {
                     updatePreviousPassword();
                     generatePassword(true);
@@ -100,7 +101,8 @@ public class CreateActivity extends FooterActivity {
     }
 
     private boolean invalidPasswordLength() {
-        int length = mPasswordLength.getText().toString().length();
+        int length = Integer.parseInt(mPasswordLength.getText().toString());
+        Log.d("TAg", String.valueOf(length));
         if (length < 5 || length > 16){
             Toast.makeText(this,
                     "Invalid Length",

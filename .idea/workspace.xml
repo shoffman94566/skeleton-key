@@ -14,6 +14,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="DEBUG" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.kp.skey" />
   </component>
   <component name="ChangeListManager">
@@ -58,14 +59,14 @@
       <file leaf-file-name="CreateActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/kp/skey/CreateActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.56551725">
-              <caret line="78" column="16" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.4362069">
+              <caret line="103" column="76" selection-start-line="103" selection-start-column="76" selection-end-line="103" selection-end-column="76" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2604#3210#0" expanded="true" />
-                <element signature="e#3209#3210#0" expanded="true" />
-                <element signature="e#3261#3517#0" expanded="true" />
-                <element signature="e#3516#3517#0" expanded="true" />
+                <element signature="e#2629#3219#0" expanded="true" />
+                <element signature="e#3218#3219#0" expanded="true" />
+                <element signature="e#3270#3526#0" expanded="true" />
+                <element signature="e#3525#3526#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1137,14 +1138,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/kp/skey/CreateActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56551725">
-          <caret line="78" column="16" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.4362069">
+          <caret line="103" column="76" selection-start-line="103" selection-start-column="76" selection-end-line="103" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2604#3210#0" expanded="true" />
-            <element signature="e#3209#3210#0" expanded="true" />
-            <element signature="e#3261#3517#0" expanded="true" />
-            <element signature="e#3516#3517#0" expanded="true" />
+            <element signature="e#2629#3219#0" expanded="true" />
+            <element signature="e#3218#3219#0" expanded="true" />
+            <element signature="e#3270#3526#0" expanded="true" />
+            <element signature="e#3525#3526#0" expanded="true" />
           </folding>
         </state>
       </provider>
