@@ -25,6 +25,7 @@ public class CreateActivity extends FooterActivity {
     private TextView mChangeTextHelp;
     private TextView mPreviousPassword;
     private String oldPassword;
+    private String mpassedSiteName;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class CreateActivity extends FooterActivity {
         SharedPrefs.init(this);
 
         mChangeValue = getIntent().getExtras().getBoolean("change", false);
+        mpassedSiteName = getIntent().getExtras().getString("siteName");
 
         mTitle = (TextView) findViewById(R.id.create_title);
         mSiteName = (EditText) findViewById(R.id.check_site_name);
@@ -51,6 +53,11 @@ public class CreateActivity extends FooterActivity {
         mPreviousPassword.setVisibility(View.GONE);
         mChangeTextHelp = (TextView) findViewById(R.id.change_text_help);
         mChangeTextHelp.setVisibility(View.GONE);
+
+        // set sitename is coming from check activity
+        if (mpassedSiteName != null) {
+            mSiteName.setText(mpassedSiteName);
+        }
 
         // different setup if change screen
         if (mChangeValue) {
@@ -111,10 +118,7 @@ public class CreateActivity extends FooterActivity {
                     Toast.LENGTH_LONG).show();
             return;
         }
-//        if (view != null) {
-//            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-//            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-//        }
+
         MessageDigest md = null;
         try {
             md = MessageDigest.getInstance("MD5");

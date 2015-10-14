@@ -33,6 +33,9 @@ public class CheckActivity extends FooterActivity {
             public void onClick(View v) {
                 Intent myIntent = new Intent(CheckActivity.this, CreateActivity.class);
                 myIntent.putExtra("change", false);
+                if (mCheckSiteNameEditText.getText().toString() != null && mCheckSiteNameEditText.getText().toString().length() != 0) {
+                    myIntent.putExtra("siteName", mCheckSiteNameEditText.getText().toString());
+                }
                 CheckActivity.this.startActivity(myIntent);
             }
         });
