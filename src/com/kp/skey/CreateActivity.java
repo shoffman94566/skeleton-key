@@ -91,9 +91,6 @@ public class CreateActivity extends FooterActivity {
         mRegeneratePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mChangeValue) {
-                    updatePreviousPassword();
-                }
                 generatePassword(true);
             }
         });

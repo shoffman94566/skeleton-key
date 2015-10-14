@@ -59,14 +59,13 @@
       <file leaf-file-name="CreateActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/kp/skey/CreateActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4362069">
-              <caret line="103" column="76" selection-start-line="103" selection-start-column="76" selection-end-line="103" selection-end-column="76" />
+            <state vertical-scroll-proportion="0.7155172">
+              <caret line="92" column="41" selection-start-line="92" selection-start-column="41" selection-end-line="92" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2629#3219#0" expanded="true" />
                 <element signature="e#3218#3219#0" expanded="true" />
-                <element signature="e#3270#3526#0" expanded="true" />
-                <element signature="e#3525#3526#0" expanded="true" />
+                <element signature="e#3425#3426#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1138,14 +1137,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/kp/skey/CreateActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4362069">
-          <caret line="103" column="76" selection-start-line="103" selection-start-column="76" selection-end-line="103" selection-end-column="76" />
+        <state vertical-scroll-proportion="0.7155172">
+          <caret line="92" column="41" selection-start-line="92" selection-start-column="41" selection-end-line="92" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2629#3219#0" expanded="true" />
             <element signature="e#3218#3219#0" expanded="true" />
-            <element signature="e#3270#3526#0" expanded="true" />
-            <element signature="e#3525#3526#0" expanded="true" />
+            <element signature="e#3425#3426#0" expanded="true" />
           </folding>
         </state>
       </provider>
