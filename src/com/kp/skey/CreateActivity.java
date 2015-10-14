@@ -1,6 +1,7 @@
 package com.kp.skey;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.*;
 
@@ -10,7 +11,7 @@ import java.security.NoSuchAlgorithmException;
 public class CreateActivity extends FooterActivity {
     private Button mGeneratePassword;
     private EditText mPasswordLength;
-    private CheckBox mSymboldCheckbox;
+    private CheckBox mSymbolCheckbox;
     private CheckBox mNumeralsCheckbox;
     private CheckBox mCapsCheckbox;
     private CheckBox mlowercaseCheckbox;
@@ -22,6 +23,11 @@ public class CreateActivity extends FooterActivity {
     private TextView mChangeTextHelp;
     private TextView mPreviousPassword;
     private String oldPassword;
+    private String mpassedSiteName;
+
+    private void validateAtLeastOneCheckBoxChecked() {
+
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,13 +36,14 @@ public class CreateActivity extends FooterActivity {
         SharedPrefs.init(this);
 
         mChangeValue = getIntent().getExtras().getBoolean("change", false);
+        mpassedSiteName = getIntent().getExtras().getString("siteName");
 
         mTitle = (TextView) findViewById(R.id.create_title);
         mSiteName = (EditText) findViewById(R.id.check_site_name);
         mlowercaseCheckbox = (CheckBox) findViewById(R.id.lower_case_checkbox);
         mCapsCheckbox = (CheckBox) findViewById(R.id.caps_checkbox);
         mNumeralsCheckbox = (CheckBox) findViewById(R.id.numerals_checkbox);
-        mSymboldCheckbox = (CheckBox) findViewById(R.id.symbols_checkbox);
+        mSymbolCheckbox = (CheckBox) findViewById(R.id.symbols_checkbox);
         mPasswordLength = (EditText) findViewById(R.id.password_length);
 
         mGeneratePassword = (Button) findViewById(R.id.check_password_button);
@@ -49,6 +56,11 @@ public class CreateActivity extends FooterActivity {
         mChangeTextHelp = (TextView) findViewById(R.id.change_text_help);
         mChangeTextHelp.setVisibility(View.GONE);
 
+        // set sitename is coming from check activity
+        if (mpassedSiteName != null) {
+            mSiteName.setText(mpassedSiteName);
+        }
+
         // different setup if change screen
         if (mChangeValue) {
           mTitle.setText("To Change a U-U Password");
@@ -57,6 +69,15 @@ public class CreateActivity extends FooterActivity {
         mGeneratePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Util.hideKeyboard(CreateActivity.this);
+                if (allCheckBoxesUnchecked()) {
+                    return;
+                }
+                
+                if (invalidPasswordLength()){
+                    return;
+                }
+
                 if(mChangeValue) {
                     updatePreviousPassword();
                     generatePassword(true);
@@ -70,14 +91,34 @@ public class CreateActivity extends FooterActivity {
         mRegeneratePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(mChangeValue) {
-                    updatePreviousPassword();
-                }
                 generatePassword(true);
-
             }
         });
+
     }
+
+    private boolean invalidPasswordLength() {
+        int length = Integer.parseInt(mPasswordLength.getText().toString());
+        Log.d("TAg", String.valueOf(length));
+        if (length < 5 || length > 16){
+            Toast.makeText(this,
+                    "Invalid Length",
+                    Toast.LENGTH_LONG).show();
+            return true;
+        }
+        return false;
+    }
+
+    private boolean allCheckBoxesUnchecked() {
+        if (!mlowercaseCheckbox.isChecked() && !mCapsCheckbox.isChecked() && !mNumeralsCheckbox.isChecked() && !mSymbolCheckbox.isChecked()) {
+            Toast.makeText(this,
+                    "Invalid Entry",
+                    Toast.LENGTH_LONG).show();
+            return true;
+        }
+        return false;
+    }
+
 
     private void updatePreviousPassword() {
         String siteName = mSiteName.getText().toString();
@@ -105,10 +146,7 @@ public class CreateActivity extends FooterActivity {
                     Toast.LENGTH_LONG).show();
             return;
         }
-//        if (view != null) {
-//            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-//            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-//        }
+
         MessageDigest md = null;
         try {
             md = MessageDigest.getInstance("MD5");
@@ -134,7 +172,7 @@ public class CreateActivity extends FooterActivity {
         String passkey = null;
         try {
             passkey = PasswordGenerator.generate(sitename,
-                    mNumeralsCheckbox.isChecked(), mSymboldCheckbox.isChecked(),
+                    mNumeralsCheckbox.isChecked(), mSymbolCheckbox.isChecked(),
                     mCapsCheckbox.isChecked(), len);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();

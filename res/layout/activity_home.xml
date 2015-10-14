@@ -2,43 +2,44 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-    android:padding="10dp">
+                android:padding="10dp">
 
     <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Title Text"
-            android:id="@+id/title_text_view"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Title Text"
+        android:id="@+id/title_text_view"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
     <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Check a U-U Password"
-            android:id="@+id/check_button"
-            android:layout_below="@+id/title_text_view"
-            android:layout_centerHorizontal="true"
-            android:textSize="20sp"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check a U-U Password"
+        android:id="@+id/check_button"
+        android:layout_below="@+id/title_text_view"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"/>
     <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Create a U-U Password"
-            android:id="@+id/create_button"
-            android:layout_below="@+id/check_button"
-            android:layout_centerHorizontal="true"
-            android:textSize="20sp"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create a U-U Password"
+        android:id="@+id/create_button"
+        android:layout_below="@+id/check_button"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"/>
     <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Change a U-U Password"
-            android:id="@+id/change_button"
-            android:layout_below="@+id/create_button"
-            android:layout_centerHorizontal="true"
-            android:textSize="20sp"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Change a U-U Password"
+        android:id="@+id/change_button"
+        android:layout_below="@+id/create_button"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"/>
     <include layout="@layout/footer"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"/>
+             android:layout_centerHorizontal="true"
+             android:layout_marginBottom="10dp"/>
 </RelativeLayout>
