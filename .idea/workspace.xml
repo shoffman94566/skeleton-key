@@ -12,11 +12,11 @@
     <shared>
       <config>
         <devices>
+          <device id="Nexus 6P" />
+          <device id="Nexus 6" />
           <device id="Nexus 5" />
           <device id="Nexus 5X" />
           <device id="Nexus 4" />
-          <device id="Nexus 6" />
-          <device id="Nexus 6P" />
         </devices>
       </config>
     </shared>
@@ -41,8 +41,6 @@
     <list default="true" id="074ddf35-4d10-4a6f-8b6c-0b66762ec319" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_check.xml" afterPath="$PROJECT_DIR$/res/layout/activity_check.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_create.xml" afterPath="$PROJECT_DIR$/res/layout/activity_create.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_home.xml" afterPath="$PROJECT_DIR$/res/layout/activity_home.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="skeletonkey-android-master.iws" />
@@ -66,13 +64,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CreateActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/kp/skey/CreateActivity.java">
+      <file leaf-file-name="activity_check.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/res/layout/activity_check.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.268085">
-              <caret line="48" column="55" selection-start-line="48" selection-start-column="55" selection-end-line="48" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.18906942">
+              <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -214,11 +215,11 @@
         <option value="$PROJECT_DIR$/src/com/kp/skey/CheckActivity.java" />
         <option value="$PROJECT_DIR$/res/values/attrs.xml" />
         <option value="$PROJECT_DIR$/src/com/kp/skey/FontTextView.java" />
-        <option value="$PROJECT_DIR$/res/layout/activity_check.xml" />
         <option value="$PROJECT_DIR$/src/com/kp/skey/FontButton.java" />
         <option value="$PROJECT_DIR$/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/res/layout/activity_home.xml" />
         <option value="$PROJECT_DIR$/res/layout/activity_create.xml" />
+        <option value="$PROJECT_DIR$/res/layout/activity_check.xml" />
       </list>
     </option>
   </component>
@@ -402,7 +403,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="ignore_missing_gitignore" value="true" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="F5AZFG012517" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="192.168.57.101:5555" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_21_x86" />
     <property name="FullScreen" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.SHOW" value="true" />
@@ -637,7 +638,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286119" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28513733" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28513733" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286119" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -759,24 +760,25 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="37" />
           <folding>
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="false" signature="-1:-1" placeholder="&quot;To Create&quot;" />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="&quot;To Create&quot;" />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -789,24 +791,25 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
           <folding>
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="false" signature="-1:-1" placeholder="&quot;To Create&quot;" />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="&quot;To Create&quot;" />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1070,7 +1073,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.1219512">
           <caret line="46" column="57" selection-start-line="46" selection-start-column="57" selection-end-line="46" selection-end-column="57" />
-          <folding />
+          <folding>
+            <marker date="1444792575000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1444792575000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1444792575000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1444792575000" expanded="false" signature="-1:-1" placeholder="(v) → {" />
+            <marker date="1444792575000" expanded="false" signature="-1:-1" placeholder="}" />
+            <marker date="1444792575000" expanded="false" signature="-1:-1" placeholder="(v) → { " />
+            <marker date="1444792575000" expanded="false" signature="-1:-1" placeholder=" }" />
+            <marker date="1444792575000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1444792575000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1444792575000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1444792575000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1151,27 +1166,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_check.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44903988">
-          <caret line="19" column="31" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="31" />
-          <folding>
-            <marker date="1444857988000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444857988000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444857988000" expanded="false" signature="-1:-1" placeholder="&quot;Check&quot;" />
-            <marker date="1444857988000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444857988000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444857988000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444857988000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444857988000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444857988000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/activity_home.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6381093">
@@ -1187,36 +1181,6 @@
             <marker date="1444859831000" expanded="true" signature="-1:-1" placeholder="..." />
             <marker date="1444859831000" expanded="false" signature="-1:-1" placeholder="&quot;Change&quot;" />
             <marker date="1444859831000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_create.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64798206">
-          <caret line="72" column="37" selection-start-line="72" selection-start-column="37" selection-end-line="72" selection-end-column="37" />
-          <folding>
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="false" signature="-1:-1" placeholder="&quot;To Create&quot;" />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444860289000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1243,8 +1207,62 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.268085">
           <caret line="48" column="55" selection-start-line="48" selection-start-column="55" selection-end-line="48" selection-end-column="55" />
+          <folding>
+            <marker date="1444792575000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1444792575000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1444792575000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1444792575000" expanded="false" signature="-1:-1" placeholder="(v) → {" />
+            <marker date="1444792575000" expanded="false" signature="-1:-1" placeholder="}" />
+            <marker date="1444792575000" expanded="false" signature="-1:-1" placeholder="(v) → { " />
+            <marker date="1444792575000" expanded="false" signature="-1:-1" placeholder=" }" />
+            <marker date="1444792575000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1444792575000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1444792575000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1444792575000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_create.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28360415">
+          <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+          <folding>
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="&quot;To Create&quot;" />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_check.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18906942">
+          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
   </component>
