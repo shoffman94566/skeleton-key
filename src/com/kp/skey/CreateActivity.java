@@ -91,7 +91,16 @@ public class CreateActivity extends FooterActivity {
         mRegeneratePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                generatePassword(true);
+                Util.hideKeyboard(CreateActivity.this);
+                if (allCheckBoxesUnchecked()) {
+                    return;
+                }
+
+                if (invalidPasswordLength()){
+                    return;
+                }
+
+              generatePassword(true);
             }
         });
 
