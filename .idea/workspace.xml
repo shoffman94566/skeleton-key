@@ -39,8 +39,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="074ddf35-4d10-4a6f-8b6c-0b66762ec319" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_check.xml" afterPath="$PROJECT_DIR$/res/layout/activity_check.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_create.xml" afterPath="$PROJECT_DIR$/res/layout/activity_create.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/styles.xml" afterPath="$PROJECT_DIR$/res/values/styles.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="skeletonkey-android-master.iws" />
@@ -64,11 +63,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="activity_check.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/res/layout/activity_check.xml">
+      <file leaf-file-name="activity_create.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/res/layout/activity_create.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18906942">
-              <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.8744461">
+              <caret line="37" column="51" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -91,6 +90,10 @@
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="true" />
     </FindUsagesManager>
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="KEY_STORE_PATH" value="$USER_HOME$/.android/debug.keystore" />
+    <option name="KEY_ALIAS" value="androiddebugkey" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -207,7 +210,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/com/kp/skey/CreateActivity.java" />
-        <option value="$PROJECT_DIR$/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/res/layout/footer.xml" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/com/kp/skey/Util.java" />
@@ -220,6 +222,7 @@
         <option value="$PROJECT_DIR$/res/layout/activity_home.xml" />
         <option value="$PROJECT_DIR$/res/layout/activity_create.xml" />
         <option value="$PROJECT_DIR$/res/layout/activity_check.xml" />
+        <option value="$PROJECT_DIR$/res/values/styles.xml" />
       </list>
     </option>
   </component>
@@ -398,12 +401,12 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/.android/debug.keystore" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="ignore_missing_gitignore" value="true" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="192.168.57.101:5555" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="F5AZFG012517" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_21_x86" />
     <property name="FullScreen" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.SHOW" value="true" />
@@ -412,6 +415,9 @@
     <property name="editor.config.accepted" value="true" />
     <property name="show.migrate.to.gradle.popup" value="false" />
     <property name="extract.method.default.visibility" value="private" />
+    <property name="ExportedModule" value="Skey" />
+    <property name="ExportedApkPath" value="$PROJECT_DIR$/Skey.apk" />
+    <property name="AndroidRunProguardForReleaseBuild" value="false" />
   </component>
   <component name="RunManager" selected="Android Application.Skey">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -634,7 +640,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32867885" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32719547" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286119" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -732,14 +738,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/kp/skey/Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="32" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/kp/skey/CheckActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -759,27 +757,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="37" />
-          <folding>
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="&quot;To Create&quot;" />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
@@ -790,27 +768,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-          <folding>
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="&quot;To Create&quot;" />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1223,27 +1181,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_create.xml">
+    <entry file="file://$PROJECT_DIR$/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28360415">
-          <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.14159292">
+          <caret line="6" column="78" selection-start-line="6" selection-start-column="78" selection-end-line="6" selection-end-column="78" />
+          <folding>
+            <marker date="1444871762000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444871762000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444871762000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444871762000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444871762000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_check.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18906942">
+          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
           <folding>
             <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
             <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444863007000" expanded="false" signature="-1:-1" placeholder="&quot;Check&quot;" />
             <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
             <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
             <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="&quot;To Create&quot;" />
             <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
             <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
             <marker date="1444863007000" expanded="true" signature="-1:-1" placeholder="..." />
@@ -1254,10 +1216,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_check.xml">
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_create.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18906942">
-          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.8744461">
+          <caret line="37" column="51" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
           <folding />
         </state>
       </provider>
