@@ -110,10 +110,10 @@
         android:text="Regenerate Password"
         android:id="@+id/regenerate_password_button"
         android:layout_below="@+id/generated_password"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignLeft="@+id/accept_password_button"
+        android:layout_alignStart="@+id/accept_password_button"
+        android:layout_alignRight="@+id/accept_password_button"
+        android:layout_alignEnd="@+id/accept_password_button"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -121,10 +121,10 @@
         android:text="Accept"
         android:id="@+id/accept_password_button"
         android:layout_below="@+id/regenerate_password_button"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignLeft="@+id/check_password_button"
+        android:layout_alignStart="@+id/check_password_button"
+        android:layout_alignRight="@+id/check_password_button"
+        android:layout_alignEnd="@+id/check_password_button"/>
 
     <com.kp.skey.FontTextView
         android:layout_width="wrap_content"
