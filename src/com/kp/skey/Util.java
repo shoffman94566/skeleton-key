@@ -8,6 +8,12 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
+
 public class Util {
 
 	private static final String TAG = Util.class.getName();

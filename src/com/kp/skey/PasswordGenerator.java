@@ -27,7 +27,8 @@ public class PasswordGenerator {
 	}
 
 	public static String generate(String domaintext, Boolean numericals,
-								  Boolean symbols, Boolean upperCase, Boolean lowerCase, int size)
+								  Boolean symbols, Boolean upperCase,
+								  Boolean lowerCase, int size, long timestamp)
 			throws NoSuchAlgorithmException {
 
 		if (size < 5)
@@ -38,7 +39,7 @@ public class PasswordGenerator {
 		passwordSize = size;
 
 		MessageDigest md = MessageDigest.getInstance("MD5");
-		String fullSeedText = System.currentTimeMillis() + domaintext + salt;
+		String fullSeedText = timestamp + domaintext + salt;
 		md.update(fullSeedText.getBytes());
 		byte[] digest = md.digest();
 		StringBuilder sb = new StringBuilder();
