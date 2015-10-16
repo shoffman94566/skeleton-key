@@ -5,6 +5,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.*;
 
+import org.json.JSONException;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -24,6 +26,11 @@ public class CreateActivity extends FooterActivity {
     private TextView mPreviousPassword;
     private String oldPassword;
     private String mpassedSiteName;
+    private Button mAccept;
+    private long timestamp;
+    private String siteName;
+    private Integer len;
+    private String passkey;
 
     private void validateAtLeastOneCheckBoxChecked() {
 
@@ -50,6 +57,7 @@ public class CreateActivity extends FooterActivity {
         mRegeneratePassword = (Button) findViewById(R.id.regenerate_password_button);
         mGeneratedPasswordTextView = (TextView) findViewById(R.id.generated_password);
         mRegeneratePassword.setVisibility(View.GONE);
+        mAccept = (Button) findViewById(R.id.accept_password_button);
 
         mPreviousPassword = (TextView) findViewById(R.id.previous_password);
         mPreviousPassword.setVisibility(View.GONE);
@@ -66,9 +74,14 @@ public class CreateActivity extends FooterActivity {
           mTitle.setText("To Change a U-U Password");
         }
 
+
+
         mGeneratePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                siteName = mSiteName.getText().toString();
+                timestamp = System.currentTimeMillis();
+
                 Util.hideKeyboard(CreateActivity.this);
                 if (allCheckBoxesUnchecked()) {
                     return;
@@ -79,19 +92,58 @@ public class CreateActivity extends FooterActivity {
                 }
 
                 if(mChangeValue) {
-                    updatePreviousPassword();
-                    generatePassword(true);
+                    String siteName = mSiteName.getText().toString();
+                    if (siteName != null && siteName.length() != 0) {
+                        updatePreviousPassword(siteName);
+                    }
+                    try {
+                        generatePassword(true, siteName, timestamp);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 } else {
-                    generatePassword(false);
+                    try {
+                        generatePassword(false, siteName, timestamp);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
 
             }
         });
 
         mRegeneratePassword.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                generatePassword(true);
+                siteName = mSiteName.getText().toString();
+                timestamp = System.currentTimeMillis();
+
+                Util.hideKeyboard(CreateActivity.this);
+                if (allCheckBoxesUnchecked()) {
+                    return;
+                }
+
+                if (invalidPasswordLength()){
+                    return;
+                }
+
+                try {
+                    generatePassword(true, siteName, timestamp);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        mAccept.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    savePassword();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -99,7 +151,6 @@ public class CreateActivity extends FooterActivity {
 
     private boolean invalidPasswordLength() {
         int length = Integer.parseInt(mPasswordLength.getText().toString());
-        Log.d("TAg", String.valueOf(length));
         if (length < 5 || length > 16){
             Toast.makeText(this,
                     "Invalid Length",
@@ -120,20 +171,20 @@ public class CreateActivity extends FooterActivity {
     }
 
 
-    private void updatePreviousPassword() {
-        String siteName = mSiteName.getText().toString();
-        oldPassword = SkeyApplication.getMyMap(siteName);
-        mPreviousPassword.setVisibility(View.VISIBLE);
-        String baseString = "Previous U-U  Password :";
-        String combinedString = baseString.concat(oldPassword);
-        mPreviousPassword.setText(combinedString);
+    private void updatePreviousPassword(String siteName) {
+        try {
+            oldPassword = SkeyApplication.getPassword(siteName);
+            mPreviousPassword.setVisibility(View.VISIBLE);
+            String baseString = "Previous U-U  Password :";
+            String combinedString = baseString.concat(oldPassword);
+            mPreviousPassword.setText(combinedString);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
-    private void generatePassword(boolean force) {
-
-        String sitename = mSiteName.getText().toString();
-//        View view = instance.getCurrentFocus();
-
+    private void generatePassword(boolean force, String siteName, long timestamp) throws JSONException {
         if (mSiteName.getText() == null
                 || mSiteName.getText().length() == 0) {
             Toast.makeText(this, "Enter Site name", Toast.LENGTH_LONG)
@@ -153,7 +204,7 @@ public class CreateActivity extends FooterActivity {
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
-        Integer len = 5;
+        len = 5;
         try {
             len = Integer.valueOf(mPasswordLength.getText().toString());
             if (len < 5) {
@@ -169,27 +220,33 @@ public class CreateActivity extends FooterActivity {
             len = 5;
         }
 
-        String passkey = null;
+        passkey = null;
         try {
-            passkey = PasswordGenerator.generate(sitename,
+            passkey = PasswordGenerator.generate(siteName,
                     mNumeralsCheckbox.isChecked(), mSymbolCheckbox.isChecked(),
-                    mCapsCheckbox.isChecked(), len);
+                    mCapsCheckbox.isChecked(), mlowercaseCheckbox.isChecked(),
+                    len, timestamp);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
 
-        if (SkeyApplication.containsKey(sitename) && !force) {
+        if (SkeyApplication.containsKey(siteName) && !force) {
             Toast.makeText(
                     this,
-                    "Password " + SkeyApplication.getMyMap(sitename)
-                            + " previously created for this site.",
+                    "Password previously created for this site.",
                     Toast.LENGTH_LONG).show();
             return;
         }
-        SkeyApplication.put(sitename, passkey);
+
         mGeneratePassword.setVisibility(View.GONE);
         mRegeneratePassword.setVisibility(View.VISIBLE);
         mGeneratedPasswordTextView.setText(passkey);
+    }
+
+    private void savePassword() throws JSONException {
+        SkeyApplication.put(siteName, len, passkey, timestamp, mlowercaseCheckbox.isChecked(),
+                mCapsCheckbox.isChecked(), mNumeralsCheckbox.isChecked(), mSymbolCheckbox.isChecked());
+
     }
 
 }

@@ -46,7 +46,7 @@ public class CheckActivity extends FooterActivity {
                 String siteName = mCheckSiteNameEditText.getText().toString();
                 Util.hideKeyboard(CheckActivity.this);
                 if (SkeyApplication.containsKey(siteName)) {
-                    String password = SkeyApplication.getMyMap(siteName);
+                    String password = SkeyApplication.getPassword(siteName);
                     mCheckPasswordTextView.setText(password);
                 } else {
                     mCheckPasswordTextView.setText("You have no U-U password for this site name");
