@@ -182,7 +182,7 @@ public class CreateActivity extends FooterActivity {
         try {
             passkey = PasswordGenerator.generate(sitename,
                     mNumeralsCheckbox.isChecked(), mSymbolCheckbox.isChecked(),
-                    mCapsCheckbox.isChecked(), len);
+                    mCapsCheckbox.isChecked(), mlowercaseCheckbox.isChecked() ,len);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
