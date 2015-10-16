@@ -21,17 +21,6 @@
         android:textStyle="bold"
         />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:singleLine="true"
-        android:id="@+id/check_site_name"
-        android:layout_below="@+id/check_title"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:inputType="text"
-        android:layout_toRightOf="@+id/site_name_label"
-        android:layout_toEndOf="@+id/site_name_label"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="password here"
+        android:text=""
         android:id="@+id/check_password_textview"
         android:layout_below="@+id/check_password_button"
         android:layout_centerHorizontal="true"
@@ -72,6 +61,20 @@
         android:layout_alignBottom="@+id/check_site_name"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:id="@+id/check_site_name"
+        android:layout_below="@+id/check_title"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:inputType="text"
+        android:layout_toRightOf="@+id/site_name_label"
+        android:layout_toEndOf="@+id/site_name_label"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"/>
 
     <include layout="@layout/footer"
              android:layout_width="wrap_content"

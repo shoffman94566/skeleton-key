@@ -62,7 +62,8 @@ public class CreateActivity extends FooterActivity {
         mPreviousPassword = (TextView) findViewById(R.id.previous_password);
         mPreviousPassword.setVisibility(View.GONE);
         mChangeTextHelp = (TextView) findViewById(R.id.change_text_help);
-        mChangeTextHelp.setVisibility(View.GONE);
+        // commenting out the line below because the notice is needed to show the user.
+        //mChangeTextHelp.setVisibility(View.GONE);
 
         // set sitename is coming from check activity
         if (mpassedSiteName != null) {
@@ -175,7 +176,7 @@ public class CreateActivity extends FooterActivity {
         try {
             oldPassword = SkeyApplication.getPassword(siteName);
             mPreviousPassword.setVisibility(View.VISIBLE);
-            String baseString = "Previous U-U  Password :";
+            String baseString = "Previous U-U Password: ";
             String combinedString = baseString.concat(oldPassword);
             mPreviousPassword.setText(combinedString);
         } catch (Exception e) {

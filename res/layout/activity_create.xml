@@ -27,38 +27,74 @@
         android:layout_below="@+id/create_title"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignLeft="@+id/check_password_button"
-        android:layout_alignStart="@+id/check_password_button"/>
+        android:layout_toRightOf="@+id/textView"
+        android:layout_toEndOf="@+id/textView"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/check_site_name"
+        android:orientation="horizontal"
+        android:id="@+id/checkbox_title_container">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="lower case"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="caps"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="numerals"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="symbols"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/checkbox_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/check_site_name">
+        android:layout_below="@id/checkbox_title_container"
+        >
 
         <CheckBox
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="lower case"
             android:id="@+id/lower_case_checkbox"
             android:checked="true"/>
         <CheckBox
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="caps"
             android:id="@+id/caps_checkbox"
             android:checked="true"/>
         <CheckBox
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="numerals"
             android:id="@+id/numerals_checkbox"
             android:checked="true"/>
         <CheckBox
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="symbols"
             android:id="@+id/symbols_checkbox"
             android:checked="true"/>
 
@@ -71,6 +107,10 @@
         android:text="Generate Password"
         android:id="@+id/check_password_button"
         android:layout_below="@+id/password_length"
+        android:layout_alignRight="@+id/regenerate_password_button"
+        android:layout_alignEnd="@+id/regenerate_password_button"
+        android:layout_alignLeft="@+id/regenerate_password_button"
+        android:layout_alignStart="@+id/regenerate_password_button"
         android:layout_centerHorizontal="true"/>
 
     <TextView
@@ -78,11 +118,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/generated_password"
-        android:text="generated Password"
+        android:text=""
         android:layout_below="@+id/check_password_button"
         android:layout_centerHorizontal="true"
-        android:padding="10dp"
-        android:textSize="18sp"/>
+        android:padding="10dp"/>
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -110,10 +149,7 @@
         android:text="Regenerate Password"
         android:id="@+id/regenerate_password_button"
         android:layout_below="@+id/generated_password"
-        android:layout_alignLeft="@+id/accept_password_button"
-        android:layout_alignStart="@+id/accept_password_button"
-        android:layout_alignRight="@+id/accept_password_button"
-        android:layout_alignEnd="@+id/accept_password_button"/>
+        android:layout_centerHorizontal="true"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -121,6 +157,7 @@
         android:text="Accept"
         android:id="@+id/accept_password_button"
         android:layout_below="@+id/regenerate_password_button"
+        android:layout_centerHorizontal="true"
         android:layout_alignLeft="@+id/check_password_button"
         android:layout_alignStart="@+id/check_password_button"
         android:layout_alignRight="@+id/check_password_button"
@@ -157,17 +194,15 @@
         android:layout_below="@+id/previous_password"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_alignRight="@+id/check_site_name"
         android:layout_alignEnd="@+id/check_site_name"
-        android:textSize="16sp"
-        android:padding="10dp"
-        android:textStyle="italic|bold"/>
+        android:textStyle="italic|bold"
+        android:textSize="16sp"/>
 
     <include layout="@layout/footer"
-             android:layout_width="wrap_content"
+             android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:layout_alignParentBottom="true"
              android:layout_centerHorizontal="true"
-             android:layout_marginBottom="10dp"/>
+             android:layout_marginBottom="5dp"/>
 </RelativeLayout>
