@@ -49,7 +49,6 @@ public class SkeyApplication extends Application {
 			myMap = SharedPrefs.getAll();
 
 		PasswordParameters passwordParameters = new PasswordParameters();
-		passwordParameters.setHashedSiteName(siteName);
 		passwordParameters.setSize(size);
 		passwordParameters.setLowerCase(new Boolean(lowercase));
 		passwordParameters.setUpperCase(new Boolean(uppercase));
@@ -59,13 +58,14 @@ public class SkeyApplication extends Application {
 		String passwordParametersJsonString = passwordParameters.convertToJson();
 
 
-
-		myMap.put(siteName, passwordParametersJsonString);
+		String hashedSiteName = Util.md5(siteName);
+		myMap.put(hashedSiteName, passwordParametersJsonString);
 		SharedPrefs.setAll(myMap);
 	}
 
 	public static String getPassword(String siteName) {
-		String jsonString = myMap.get(siteName);
+		String hashedSiteName = Util.md5(siteName);
+		String jsonString = myMap.get(hashedSiteName);
 		String password = "";
 		try {
 			JSONObject passwordParemetersJson = new JSONObject(jsonString);
