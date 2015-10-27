@@ -140,6 +140,7 @@ public class CreateActivity extends FooterActivity {
             @Override
             public void onClick(View v) {
                 try {
+                    Util.copyToClipboard(CreateActivity.this, passkey);
                     savePassword();
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -151,7 +152,7 @@ public class CreateActivity extends FooterActivity {
 
     private boolean invalidPasswordLength() {
         int length = Integer.parseInt(mPasswordLength.getText().toString());
-        if (length < 5 || length > 16){
+        if (length < 4 || length > 16){
             Toast.makeText(this,
                     "Invalid Length",
                     Toast.LENGTH_LONG).show();
@@ -192,9 +193,9 @@ public class CreateActivity extends FooterActivity {
                     .show();
             return;
         }
-        if (mSiteName.getText().length() < 2) {
+        if (mSiteName.getText().length() < 1) {
             Toast.makeText(this,
-                    "Enter Site name should alteast be 2 charaters",
+                    "Site name should at least be 2 charaters",
                     Toast.LENGTH_LONG).show();
             return;
         }
@@ -205,20 +206,19 @@ public class CreateActivity extends FooterActivity {
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
-        len = 5;
         try {
             len = Integer.valueOf(mPasswordLength.getText().toString());
-            if (len < 5) {
-                len = 5;
-                mPasswordLength.setText("5");
-            } else if (len > 24) {
-                len = 24;
-                mPasswordLength.setText("24");
+            if (len < 4) {
+                len = 4;
+                mPasswordLength.setText("4");
+            } else if (len > 16) {
+                len = 16;
+                mPasswordLength.setText("16");
             }
 
         } catch (Exception e) {
             e.printStackTrace();
-            len = 5;
+            len = 4;
         }
 
         passkey = null;

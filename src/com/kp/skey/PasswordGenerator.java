@@ -31,10 +31,10 @@ public class PasswordGenerator {
 								  Boolean lowerCase, int size, long timestamp)
 			throws NoSuchAlgorithmException {
 
-		if (size < 5)
-			size = 5;
-		if (size > 24)
-			size = 24;
+		if (size < 4)
+			size = 4;
+		if (size > 16)
+			size = 16;
 
 		passwordSize = size;
 
@@ -57,19 +57,60 @@ public class PasswordGenerator {
 		Random rng = new Random(seed);
 
 		StringBuilder buffer = new StringBuilder(passwordSize);
+        int counter = 0;
 		while(buffer.length() < passwordSize) {
-			if (upperCase && buffer.length() < passwordSize) {
-				buffer.append(UPPER_CASE.charAt(rng.nextInt(UPPER_CASE_LEN - 1)));
-			}
-			if (lowerCase && buffer.length() < passwordSize) {
-				buffer.append(LOWER_CASE.charAt(rng.nextInt(LOWER_CASE_LEN - 1)));
-			}
-			if (numericals && buffer.length() < passwordSize) {
-				buffer.append(NUMERAL.charAt(rng.nextInt(NUMERAL_LEN - 1)));
-			}
-			if (symbols && buffer.length() < passwordSize) {
-				buffer.append(symbol.charAt(rng.nextInt(symbol.length() - 1)));
-			}
+			if (buffer.length() < 4 && counter <= 4){
+                if (upperCase && buffer.length() < passwordSize) {
+                    buffer.append(UPPER_CASE.charAt(rng.nextInt(UPPER_CASE_LEN - 1)));
+                }
+                if (lowerCase && buffer.length() < passwordSize) {
+                    buffer.append(LOWER_CASE.charAt(rng.nextInt(LOWER_CASE_LEN - 1)));
+                }
+                if (numericals && buffer.length() < passwordSize) {
+                    buffer.append(NUMERAL.charAt(rng.nextInt(NUMERAL_LEN - 1)));
+                }
+                if (symbols && buffer.length() < passwordSize) {
+                    buffer.append(symbol.charAt(rng.nextInt(symbol.length() - 1)));
+                }
+            }
+            else {
+                int index = rng.nextInt(4);
+                if (index == 0 && buffer.length() < passwordSize) {
+                    if (upperCase) {
+                        buffer.append(UPPER_CASE.charAt(rng.nextInt(UPPER_CASE_LEN - 1)));
+                    } else {
+                        continue;
+                    }
+
+                }
+                if (index == 1 && buffer.length() < passwordSize) {
+                    if (lowerCase) {
+                        buffer.append(LOWER_CASE.charAt(rng.nextInt(LOWER_CASE_LEN - 1)));
+                    } else {
+                        continue;
+                    }
+
+                }
+                if (index == 2 && buffer.length() < passwordSize) {
+                    if (numericals) {
+                        buffer.append(NUMERAL.charAt(rng.nextInt(NUMERAL_LEN - 1)));
+                    } else {
+                        continue;
+                    }
+
+                }
+                if (index == 3 && buffer.length() < passwordSize) {
+                    if (symbols) {
+                        buffer.append(symbol.charAt(rng.nextInt(symbol.length() - 1)));
+                    } else {
+                        continue;
+                    }
+
+                }
+
+            }
+            counter++;
+
 		}
 
 		// append the characters to the password in random order
