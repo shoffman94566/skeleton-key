@@ -4,20 +4,32 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content">
 
-    <Button
-            android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="Close App"
             android:id="@+id/close_app"
-            android:layout_gravity="center_horizontal"/>
-    <Button
-            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="Main Menu"
             android:id="@+id/main_menu"
             android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+
     <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Instructions, Suggestions, FAQ"
             android:id="@+id/instructions"

@@ -3,35 +3,21 @@
                 xmlns:app="http://schemas.android.com/apk/res/com.kp.skey"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="10dp">
+                android:padding="10dp"
+    android:background="#fff">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="U-U Passwords"
-        android:id="@+id/title_text_view"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:textSize="40sp"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Unforgettable Unpronounceable Passwords"
-        android:layout_below="@id/title_text_view"
-        android:id="@+id/subtitle_text_view"
-        android:layout_centerHorizontal="true"
-        android:textStyle="bold"
-        android:layout_marginBottom="10dp"/>
+    <ImageView android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/header_imageview"
+               android:src="@drawable/header"
+                android:scaleType="centerInside"/>
 
     <com.kp.skey.FontButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Check a U-U Password"
         android:id="@+id/check_button"
-        android:layout_below="@+id/subtitle_text_view"
+        android:layout_below="@+id/header_imageview"
         android:layout_centerHorizontal="true"
         android:textSize="20sp"
         app:fontspannabletextview_partialText="@string/check"

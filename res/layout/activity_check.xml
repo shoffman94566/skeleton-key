@@ -12,13 +12,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="To Check U-U Password"
+        android:text="Check a U-U Password"
         android:id="@+id/check_title"
         android:layout_centerHorizontal="true"
         app:fontspannabletextview_partialText="@string/check"
         app:fontspannabletextview_partialTextColor="@color/check_red"
         android:textSize="30sp"
         android:textStyle="bold"
+        android:layout_marginTop="10dp"
         />
 
     <Button
@@ -77,7 +78,7 @@
         android:layout_marginStart="5dp"/>
 
     <include layout="@layout/footer"
-             android:layout_width="wrap_content"
+             android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:layout_alignParentBottom="true"
              android:id="@+id/include"
