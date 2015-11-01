@@ -14,6 +14,7 @@ public class CheckActivity extends FooterActivity {
     private TextView mCheckPasswordTextView;
     private EditText mCheckSiteNameEditText;
     private Button mCheckCreatePasswordButton;
+    private Button mCopyPasswordButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -25,8 +26,10 @@ public class CheckActivity extends FooterActivity {
         mCheckPasswordTextView = (TextView) findViewById(R.id.check_password_textview);
         mCheckSiteNameEditText = (EditText) findViewById(R.id.check_site_name);
         mCheckCreatePasswordButton = (Button) findViewById(R.id.check_create_password);
+        mCopyPasswordButton = (Button) findViewById(R.id.copy_password);
 
         mCheckCreatePasswordButton.setVisibility(View.GONE);
+        mCopyPasswordButton.setVisibility(View.GONE);
 
         mCheckCreatePasswordButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +58,13 @@ public class CheckActivity extends FooterActivity {
 
                 }
 
+            }
+        });
+
+        mCopyPasswordButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO: Implement password copying
             }
         });
     }
