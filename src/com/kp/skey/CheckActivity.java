@@ -52,6 +52,7 @@ public class CheckActivity extends FooterActivity {
                     String password = SkeyApplication.getPassword(siteName);
                     mCheckPasswordTextView.setText(password);
                     Util.copyToClipboard(CheckActivity.this, password);
+                    mCopyPasswordButton.setVisibility(View.VISIBLE);
                 } else {
                     mCheckPasswordTextView.setText("You have no U-U password for this site name. Check the spelling");
                     mCheckCreatePasswordButton.setVisibility(View.VISIBLE);
