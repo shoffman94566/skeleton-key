@@ -53,8 +53,9 @@ public class CheckActivity extends FooterActivity {
                     mCheckPasswordTextView.setText(password);
                     Util.copyToClipboard(CheckActivity.this, password);
                 } else {
-                    mCheckPasswordTextView.setText("You have no U-U password for this site name");
+                    mCheckPasswordTextView.setText("You have no U-U password for this site name. Check the spelling");
                     mCheckCreatePasswordButton.setVisibility(View.VISIBLE);
+                    mCheckCreatePasswordButton.setText("Create a U-U Password for the site name");
 
                 }
 

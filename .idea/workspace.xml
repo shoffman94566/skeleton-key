@@ -29,9 +29,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bc6105f6-259c-411b-b246-3268dd75768d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kp/skey/CheckActivity.java" afterPath="$PROJECT_DIR$/src/com/kp/skey/CheckActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_check.xml" afterPath="$PROJECT_DIR$/res/layout/activity_check.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_home.xml" afterPath="$PROJECT_DIR$/res/layout/activity_home.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="skeletonkey-android-master.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,13 +53,13 @@
       <file leaf-file-name="CheckActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/kp/skey/CheckActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9268293">
-              <caret line="66" column="51" selection-start-line="66" selection-start-column="51" selection-end-line="66" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.3902439">
+              <caret line="51" column="66" selection-start-line="51" selection-start-column="66" selection-end-line="51" selection-end-column="66" />
               <folding>
                 <element signature="e#1311#1877#0" expanded="true" />
                 <element signature="e#1876#1877#0" expanded="true" />
-                <element signature="e#2735#2903#0" expanded="true" />
-                <element signature="e#2902#2903#0" expanded="true" />
+                <element signature="e#2854#3022#0" expanded="true" />
+                <element signature="e#3021#3022#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -797,13 +794,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/kp/skey/CheckActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9268293">
-          <caret line="66" column="51" selection-start-line="66" selection-start-column="51" selection-end-line="66" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.3902439">
+          <caret line="51" column="66" selection-start-line="51" selection-start-column="66" selection-end-line="51" selection-end-column="66" />
           <folding>
             <element signature="e#1311#1877#0" expanded="true" />
             <element signature="e#1876#1877#0" expanded="true" />
-            <element signature="e#2735#2903#0" expanded="true" />
-            <element signature="e#2902#2903#0" expanded="true" />
+            <element signature="e#2854#3022#0" expanded="true" />
+            <element signature="e#3021#3022#0" expanded="true" />
           </folding>
         </state>
       </provider>
