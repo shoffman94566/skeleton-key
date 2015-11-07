@@ -27,7 +27,9 @@
             android:layout_height="wrap_content"
             android:text="How does this work?"
             app:fontspannabletextview_partialText="How does this work?"
-            app:fontspannabletextview_partialTextColor="@color/black"/>
+            app:fontspannabletextview_partialTextColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"/>
         <com.kp.skey.FontTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -35,13 +37,37 @@
             app:fontspannabletextview_partialText="1)-"
             app:fontspannabletextview_partialTextColor="@color/black"
             app:fontspannabletextview_partialSecondText="‘create a U-U password’"
-            app:fontspannabletextview_partialSecondTextColor="@color/black"/>
+            app:fontspannabletextview_partialSecondTextColor="@color/black"
+            android:textSize="16sp"/>
         <com.kp.skey.FontTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="How does this work?"
-            app:fontspannabletextview_partialText="How does this work?"
-            app:fontspannabletextview_partialTextColor="@color/black"/>
+            android:text="2)-For most sites, you now just select ‘Generate Password’ and you will see a display that shows you the password, and allows you to accept and copy it, so that you can use it at the website. This display also allows you to regenerate the password  if you wish; some sites refuse passwords that include words, so if one appears---unliklely--you will want to select ‘Re-generate’ so as to create a different password."
+            app:fontspannabletextview_partialText="2)-"
+            app:fontspannabletextview_partialTextColor="@color/black"
+            app:fontspannabletextview_partialSecondText="accept and copy it"
+            app:fontspannabletextview_partialSecondTextColor="@color/black"
+            android:textSize="16sp"/>
+
+        <com.kp.skey.FontTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Note 1: If you are required by the site to have fewer than four categories  you can press the category to make sure that none of its characters appear in the password."
+            app:fontspannabletextview_partialText="Note 1:"
+            app:fontspannabletextview_partialTextColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:textStyle="italic"
+            android:textSize="16sp"/>
+        <com.kp.skey.FontTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Note 2: Our default settings for the four possible character categories works for most sites. Our default allows anywhere from 1-16 characters in a category---1-13 if all 4 categories are used. If the site you are creating a u-u password for requires a specific number in one or more categories, you need to select Advanced:  alter the character-category default. You will then see a page that allows you to insert whatever numbers you choose  in each category."
+            app:fontspannabletextview_partialText="Note 2"
+            app:fontspannabletextview_partialTextColor="@color/black"
+            app:fontspannabletextview_partialSecondText="Advanced:  alter the character-category default"
+            app:fontspannabletextview_partialSecondTextColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="italic"/>
 
         <com.kp.skey.FontTextView
             android:layout_width="match_parent"
@@ -50,6 +76,7 @@
             android:layout_marginTop="10dp"
             app:fontspannabletextview_partialText="What is a U-U password?"
             app:fontspannabletextview_partialTextColor="@color/black"
+            android:textSize="16sp"
             />
 
         <com.kp.skey.FontTextView
@@ -58,7 +85,8 @@
             android:text="@string/what_is_a_site_name"
             android:layout_marginTop="10dp"
             app:fontspannabletextview_partialText="What is a Site Name?"
-            app:fontspannabletextview_partialTextColor="@color/black"/>
+            app:fontspannabletextview_partialTextColor="@color/black"
+            android:textSize="16sp"/>
 
     </LinearLayout>
 
