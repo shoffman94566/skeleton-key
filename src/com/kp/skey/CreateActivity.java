@@ -30,6 +30,9 @@ public class CreateActivity extends FooterActivity {
     private String siteName;
     private Integer len;
     private String passkey;
+    private Button mAdvancedButton;
+    private LinearLayout mCheckBoxContainer;
+    private LinearLayout mEditTextContainer;
 
     private void validateAtLeastOneCheckBoxChecked() {
 
@@ -62,6 +65,11 @@ public class CreateActivity extends FooterActivity {
         mPreviousPassword.setVisibility(View.GONE);
         mChangeTextHelp = (TextView) findViewById(R.id.users_previous_password);
         mChangeTextHelp.setVisibility(View.GONE);
+
+        mAdvancedButton = (Button) findViewById(R.id.advanced_button);
+        mCheckBoxContainer = (LinearLayout) findViewById(R.id.checkbox_container);
+        mEditTextContainer = (LinearLayout) findViewById(R.id.edittext_container);
+        mEditTextContainer.setVisibility(View.GONE);
 
         // set sitename is coming from check activity
         if (mpassedSiteName != null) {
@@ -142,6 +150,14 @@ public class CreateActivity extends FooterActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+            }
+        });
+
+        mAdvancedButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCheckBoxContainer.setVisibility(View.GONE);
+                mEditTextContainer.setVisibility(View.VISIBLE);
             }
         });
 
