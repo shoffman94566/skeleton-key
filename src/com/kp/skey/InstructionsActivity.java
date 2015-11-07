@@ -5,6 +5,10 @@ import android.os.Bundle;
 
 /**
  * Created by temidayo on 11/7/15.
+ *
+ * this class is needed to have an instructions activity.
+ *
+ * the empty space is like art. you define it. ;)
  */
 public class InstructionsActivity extends Activity {
 

@@ -1,7 +1,6 @@
 package com.kp.skey;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.*;
 
@@ -61,7 +60,7 @@ public class CreateActivity extends FooterActivity {
 
         mPreviousPassword = (TextView) findViewById(R.id.previous_password);
         mPreviousPassword.setVisibility(View.GONE);
-        mChangeTextHelp = (TextView) findViewById(R.id.change_text_help);
+        mChangeTextHelp = (TextView) findViewById(R.id.users_previous_password);
         mChangeTextHelp.setVisibility(View.GONE);
 
         // set sitename is coming from check activity
@@ -73,8 +72,6 @@ public class CreateActivity extends FooterActivity {
         if (mChangeValue) {
           mTitle.setText("To Change a U-U Password");
         }
-
-
 
         mGeneratePassword.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -177,9 +174,7 @@ public class CreateActivity extends FooterActivity {
             oldPassword = SkeyApplication.getPassword(siteName);
             mPreviousPassword.setVisibility(View.VISIBLE);
             mChangeTextHelp.setVisibility(View.VISIBLE);
-            String baseString = "Previous U-U Password: ";
-            String combinedString = baseString.concat(oldPassword);
-            mPreviousPassword.setText(combinedString);
+            mChangeTextHelp.setText(oldPassword);
         } catch (Exception e) {
             e.printStackTrace();
         }
