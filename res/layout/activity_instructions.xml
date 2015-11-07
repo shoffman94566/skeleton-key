@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.kp.skey"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <com.kp.skey.FontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Instructions, Suggestions &amp; FAQs"
+            android:layout_gravity="center_horizontal"
+            app:fontspannabletextview_partialText="Instructions, Suggestions &amp; FAQs"
+            app:fontspannabletextview_partialTextColor="@color/create_brown"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:textSize="25sp"/>
+
+        <com.kp.skey.FontTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="How does this work?"
+            app:fontspannabletextview_partialText="How does this work?"
+            app:fontspannabletextview_partialTextColor="@color/black"/>
+        <com.kp.skey.FontTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1)-To CREATE a U-U password, select ‘create a U-U password’ on the first page of the App. The display changes."
+            app:fontspannabletextview_partialText="1)-"
+            app:fontspannabletextview_partialTextColor="@color/black"
+            app:fontspannabletextview_partialSecondText="‘create a U-U password’"
+            app:fontspannabletextview_partialSecondTextColor="@color/black"/>
+        <com.kp.skey.FontTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="How does this work?"
+            app:fontspannabletextview_partialText="How does this work?"
+            app:fontspannabletextview_partialTextColor="@color/black"/>
+
+        <com.kp.skey.FontTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/what_is_a_uu_password"
+            android:layout_marginTop="10dp"
+            app:fontspannabletextview_partialText="What is a U-U password?"
+            app:fontspannabletextview_partialTextColor="@color/black"
+            />
+
+        <com.kp.skey.FontTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/what_is_a_site_name"
+            android:layout_marginTop="10dp"
+            app:fontspannabletextview_partialText="What is a Site Name?"
+            app:fontspannabletextview_partialTextColor="@color/black"/>
+
+    </LinearLayout>
+
+</ScrollView>

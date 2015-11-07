@@ -5,4 +5,5 @@
     <color name="create_brown">#9B4719</color>
     <color name="change_blue">#0F253D</color>
     <color name="home_red">#C5000E</color>
+    <color name="black">#000</color>
 </resources>

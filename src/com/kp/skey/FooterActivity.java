@@ -7,8 +7,10 @@ import android.view.View;
 import android.widget.Button;
 
 public class FooterActivity extends Activity {
+
     private Button closeApp;
     private Button mainMenu;
+    private Button instructions;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,14 @@ public class FooterActivity extends Activity {
             }
         });
 
-
+        // go to instructions view
+        instructions = (Button) findViewById(R.id.instructions);
+        instructions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity, InstructionsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

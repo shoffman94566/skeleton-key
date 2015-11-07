@@ -9,5 +9,7 @@
     <string name="create">Create</string>
     <string name="change">Change</string>
     <string name="to_create">To Create</string>
+    <string name="what_is_a_site_name">What is a Site Name? It’s the name you will use for the site when making, changing or Check  a U-U password. It can be any string of characters, but the simplest and most easily remembered is to just use the name of the site. For example, enter ‘twitter’ to make or check your twitter password. Or enter ‘amazon’ to make or check your amazon password. Your password will be different on every site and will almost certainly be different than anyone else’s. To prevent others from using your phone to get your u-u password, you can alter the site name for your most important sites. For example, you can alter the site name for your bank to be ‘mymoney’, and your password is almost certain to be unique, even if someone one else uses ‘mymoney’ for the same site name. Or you can add some characters to your sitenames, for example’ rboamazon, and rbotwitter. But any such alterations must be easily remembered. They can be added to any, all or none of your site names. It’s entirely up to you. U-U passwords can be used for many password needs other than websites.</string>
+    <string name="what_is_a_uu_password">What is a U-U password? It is a password created by this app. It is 16 characters long unless you ask for a shorter length and has a mix of alphabetic characters, numbers and symbols.</string>
 
 </resources>

@@ -3,6 +3,7 @@ package com.kp.skey;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
@@ -36,7 +37,9 @@ public class FontTextView extends TextView {
             return;
         }
         String partialText = null;
+        String partialSecondText = null;
         int partialTextColor = Integer.MIN_VALUE;
+        int partialSecondTextColor = Integer.MIN_VALUE;
 
         if (attrs != null) {
             TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.FontSpannableTextView);
@@ -49,21 +52,55 @@ public class FontTextView extends TextView {
                     case R.styleable.FontSpannableTextView_fontspannabletextview_partialTextColor:
                         partialTextColor = a.getColor(attr, Color.BLACK);
                         break;
+                    case R.styleable.FontSpannableTextView_fontspannabletextview_partialSecondText:
+                        partialSecondText = a.getString(attr);
+                        break;
+                    case R.styleable.FontSpannableTextView_fontspannabletextview_partialSecondTextColor:
+                        partialSecondTextColor = a.getColor(attr, Color.BLACK);
+                        break;
                 }
             }
             a.recycle();
         }
 
-        if (partialText != null && partialTextColor != Integer.MIN_VALUE) {
+        if ((partialText != null && partialTextColor != Integer.MIN_VALUE) && (partialSecondText != null && partialSecondTextColor != Integer.MIN_VALUE)) {
             String wholeText = getText().toString();
             Spannable spannable = new SpannableString(wholeText);
             spannable.setSpan(new ForegroundColorSpan(partialTextColor),
                     wholeText.indexOf(partialText),
                     wholeText.indexOf(partialText) + partialText.length(),
                     Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            spannable.setSpan(new android.text.style.StyleSpan(Typeface.BOLD),
+                    wholeText.indexOf(partialText),
+                    wholeText.indexOf(partialText) + partialText.length(),
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            setText(spannable);
+            spannable.setSpan(new ForegroundColorSpan(partialSecondTextColor),
+                    wholeText.indexOf(partialSecondText),
+                    wholeText.indexOf(partialSecondText) + partialSecondText.length(),
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            spannable.setSpan(new android.text.style.StyleSpan(Typeface.BOLD),
+                    wholeText.indexOf(partialSecondText),
+                    wholeText.indexOf(partialSecondText) + partialSecondText.length(),
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             setText(spannable);
         } else {
-            Log.e("FontTextView", "You must provide both partialText and partialTextColor values");
+            if (partialText != null && partialTextColor != Integer.MIN_VALUE) {
+                String wholeText = getText().toString();
+                Spannable spannable = new SpannableString(wholeText);
+                spannable.setSpan(new ForegroundColorSpan(partialTextColor),
+                        wholeText.indexOf(partialText),
+                        wholeText.indexOf(partialText) + partialText.length(),
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                spannable.setSpan(new android.text.style.StyleSpan(Typeface.BOLD),
+                        wholeText.indexOf(partialText),
+                        wholeText.indexOf(partialText) + partialText.length(),
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                setText(spannable);
+            } else {
+                Log.e("FontTextView", "You must provide both partialText and partialTextColor values");
+            }
         }
+
     }
 }

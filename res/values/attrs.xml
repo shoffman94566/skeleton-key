@@ -3,5 +3,7 @@
     <declare-styleable name="FontSpannableTextView">
         <attr name="fontspannabletextview_partialText" format="string" />
         <attr name="fontspannabletextview_partialTextColor" format="color" />
+        <attr name="fontspannabletextview_partialSecondText" format="string"/>
+        <attr name="fontspannabletextview_partialSecondTextColor" format="color" />
     </declare-styleable>
 </resources>

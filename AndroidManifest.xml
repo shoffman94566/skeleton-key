@@ -22,6 +22,7 @@
         <activity android:name=".CheckActivity"/>
         <activity android:name=".CreateActivity"/>
         <activity android:name=".FooterActivity"/>
+        <activity android:name=".InstructionsActivity"/>
     </application>
 
 </manifest>
