@@ -26,6 +26,39 @@ public class PasswordGenerator {
 		seedText = pgseedtext;
 	}
 
+	public static boolean containsCorrectCharacterCategories(String passkey, int numericals, int symbols, int uppercase, int lowercase) {
+		int uppersCount = 0;
+		int lowersCount = 0;
+		int numericalsCount = 0;
+		int symbolsCount = 0;
+
+
+		for (int i = 0; i < passkey.length() ; i++) {
+			char character = passkey.charAt(i);
+			if(UPPER_CASE.contains(String.valueOf(character))) {
+				uppersCount++;
+			}
+
+			if(LOWER_CASE.contains(String.valueOf(character))) {
+				lowersCount++;
+			}
+
+			if(NUMERAL.contains(String.valueOf(character))) {
+				numericalsCount++;
+			}
+
+			if(symbol.contains(String.valueOf(character))) {
+				symbolsCount++;
+			}
+		}
+
+		if (numericals == numericalsCount && symbols == symbolsCount && lowercase == lowersCount && uppercase == uppersCount) {
+			return true;
+		}
+		return false;
+	}
+
+
 	public static String generate(String domaintext, Boolean numericals,
 								  Boolean symbols, Boolean upperCase,
 								  Boolean lowerCase, int size, long timestamp)

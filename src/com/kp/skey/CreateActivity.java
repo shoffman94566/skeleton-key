@@ -1,6 +1,8 @@
 package com.kp.skey;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.*;
 
@@ -33,6 +35,11 @@ public class CreateActivity extends FooterActivity {
     private Button mAdvancedButton;
     private LinearLayout mCheckBoxContainer;
     private LinearLayout mEditTextContainer;
+    private boolean advancedModeActivated;
+    private EditText mLowercaseEditText;
+    private EditText mCapsEditText;
+    private EditText mNumeralsEditText;
+    private EditText mSymbolsEditText;
 
     private void validateAtLeastOneCheckBoxChecked() {
 
@@ -70,6 +77,11 @@ public class CreateActivity extends FooterActivity {
         mCheckBoxContainer = (LinearLayout) findViewById(R.id.checkbox_container);
         mEditTextContainer = (LinearLayout) findViewById(R.id.edittext_container);
         mEditTextContainer.setVisibility(View.GONE);
+
+        mLowercaseEditText = (EditText) findViewById(R.id.lower_case_edittext);
+        mCapsEditText = (EditText) findViewById(R.id.caps_edittext);
+        mNumeralsEditText = (EditText) findViewById(R.id.numerals_edittext);
+        mSymbolsEditText = (EditText) findViewById(R.id.symbols_edittext);
 
         // set sitename is coming from check activity
         if (mpassedSiteName != null) {
@@ -156,6 +168,7 @@ public class CreateActivity extends FooterActivity {
         mAdvancedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                advancedModeActivated = true;
                 mCheckBoxContainer.setVisibility(View.GONE);
                 mEditTextContainer.setVisibility(View.VISIBLE);
             }
@@ -197,7 +210,7 @@ public class CreateActivity extends FooterActivity {
 
     }
 
-    private void generatePassword(boolean force, String siteName, long timestamp) throws JSONException {
+    private void generatePassword(boolean force, final String siteName, final long timestamp) throws JSONException {
         if (mSiteName.getText() == null
                 || mSiteName.getText().length() == 0) {
             Toast.makeText(this, "Enter Site name", Toast.LENGTH_LONG)
@@ -233,11 +246,79 @@ public class CreateActivity extends FooterActivity {
         }
 
         passkey = null;
+        int lowerCaseLength = 0;
+        int upperCaseLength = 0;
+        int symbolsLength = 0;
+        int numericalsLength = 0;
         try {
-            passkey = PasswordGenerator.generate(siteName,
-                    mNumeralsCheckbox.isChecked(), mSymbolCheckbox.isChecked(),
-                    mCapsCheckbox.isChecked(), mlowercaseCheckbox.isChecked(),
-                    len, timestamp);
+            if(advancedModeActivated) {
+                if (mLowercaseEditText.getText() != null && mLowercaseEditText.getText().length() > 0 ) {
+                    lowerCaseLength = Integer.parseInt(String.valueOf(mLowercaseEditText.getText()));
+                }
+                if (mCapsEditText.getText() != null && mCapsEditText.getText().length() > 0) {
+                    upperCaseLength = Integer.parseInt(String.valueOf(mCapsEditText.getText()));
+                }
+                if (mNumeralsEditText.getText() != null && mNumeralsEditText.getText().length() > 0) {
+                    numericalsLength = Integer.parseInt(String.valueOf(mNumeralsEditText.getText()));
+                }
+                if (mSymbolsEditText.getText() != null && mSymbolsEditText.getText().length() > 0) {
+                    symbolsLength = Integer.parseInt(String.valueOf(mSymbolsEditText.getText()));
+                }
+
+                final int newLength = numericalsLength + symbolsLength + upperCaseLength + lowerCaseLength;
+                if (newLength < 4 || newLength > 16) {
+                    Toast.makeText(this,
+                            "Password must be between 4 and 16 characters",
+                            Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                final int finalNumericalsLength = numericalsLength;
+                final int finalSymbolsLength = symbolsLength;
+                final int finalUpperCaseLength = upperCaseLength;
+                final int finalLowerCaseLength = lowerCaseLength;
+                final boolean numChecked = mNumeralsCheckbox.isChecked();
+                final boolean symbolChecked = mSymbolCheckbox.isChecked();
+                final boolean capsChecked = mCapsCheckbox.isChecked();
+                final boolean lowercaseChecked = mlowercaseCheckbox.isChecked();
+
+                new AsyncTask<Void, Void, String>() {
+                    @Override
+                    protected String doInBackground(final Void ... params) {
+                        while( passkey == null || !PasswordGenerator.containsCorrectCharacterCategories(passkey, finalNumericalsLength, finalSymbolsLength, finalUpperCaseLength, finalLowerCaseLength)) {
+                            long advancedTimestamp = System.currentTimeMillis();
+
+                            try {
+                                passkey = PasswordGenerator.generate(siteName,
+                                        numChecked, symbolChecked,
+                                        capsChecked, lowercaseChecked,
+                                        newLength, advancedTimestamp);
+                            } catch (NoSuchAlgorithmException e) {
+                                e.printStackTrace();
+                            }
+                            Log.d("passkey", passkey);
+                        }
+                        return passkey;
+
+
+                    }
+
+                    @Override
+                    protected void onPostExecute( final String result ) {
+                        mGeneratePassword.setVisibility(View.GONE);
+                        mRegeneratePassword.setVisibility(View.VISIBLE);
+                        mGeneratedPasswordTextView.setText(result);
+                    }
+                }.doInBackground();
+
+
+            } else {
+                passkey = PasswordGenerator.generate(siteName,
+                        mNumeralsCheckbox.isChecked(), mSymbolCheckbox.isChecked(),
+                        mCapsCheckbox.isChecked(), mlowercaseCheckbox.isChecked(),
+                        len, timestamp);
+            }
+
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
