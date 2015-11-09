@@ -97,7 +97,6 @@ public class CreateActivity extends FooterActivity {
             @Override
             public void onClick(View v) {
                 siteName = mSiteName.getText().toString();
-                timestamp = System.currentTimeMillis();
 
                 Util.hideKeyboard(CreateActivity.this);
                 if (allCheckBoxesUnchecked()) {
@@ -210,7 +209,7 @@ public class CreateActivity extends FooterActivity {
 
     }
 
-    private void generatePassword(boolean force, final String siteName, final long timestamp) throws JSONException {
+    private void generatePassword(boolean force, final String siteName, long timestamp) throws JSONException {
         if (mSiteName.getText() == null
                 || mSiteName.getText().length() == 0) {
             Toast.makeText(this, "Enter Site name", Toast.LENGTH_LONG)
@@ -245,6 +244,14 @@ public class CreateActivity extends FooterActivity {
             len = 4;
         }
 
+        if (SkeyApplication.containsKey(siteName) && !force) {
+            Toast.makeText(
+                    this,
+                    "Password previously created for this site.",
+                    Toast.LENGTH_LONG).show();
+            return;
+        }
+
         passkey = null;
         int lowerCaseLength = 0;
         int upperCaseLength = 0;
@@ -266,9 +273,9 @@ public class CreateActivity extends FooterActivity {
                 }
 
                 final int newLength = numericalsLength + symbolsLength + upperCaseLength + lowerCaseLength;
-                if (newLength < 4 || newLength > 16) {
+                if (newLength != len) {
                     Toast.makeText(this,
-                            "Password must be between 4 and 16 characters",
+                            "Password characters don't equal password length.",
                             Toast.LENGTH_LONG).show();
                     return;
                 }
@@ -286,17 +293,17 @@ public class CreateActivity extends FooterActivity {
                     @Override
                     protected String doInBackground(final Void ... params) {
                         while( passkey == null || !PasswordGenerator.containsCorrectCharacterCategories(passkey, finalNumericalsLength, finalSymbolsLength, finalUpperCaseLength, finalLowerCaseLength)) {
-                            long advancedTimestamp = System.currentTimeMillis();
+                            long newTimestamp = System.currentTimeMillis();
+                            setTimestamp(newTimestamp);
 
                             try {
                                 passkey = PasswordGenerator.generate(siteName,
                                         numChecked, symbolChecked,
                                         capsChecked, lowercaseChecked,
-                                        newLength, advancedTimestamp);
+                                        newLength, newTimestamp);
                             } catch (NoSuchAlgorithmException e) {
                                 e.printStackTrace();
                             }
-                            Log.d("passkey", passkey);
                         }
                         return passkey;
 
@@ -313,27 +320,27 @@ public class CreateActivity extends FooterActivity {
 
 
             } else {
+                long newTimestamp = System.currentTimeMillis();
+                setTimestamp(newTimestamp);
                 passkey = PasswordGenerator.generate(siteName,
                         mNumeralsCheckbox.isChecked(), mSymbolCheckbox.isChecked(),
                         mCapsCheckbox.isChecked(), mlowercaseCheckbox.isChecked(),
-                        len, timestamp);
+                        len, newTimestamp);
             }
 
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
 
-        if (SkeyApplication.containsKey(siteName) && !force) {
-            Toast.makeText(
-                    this,
-                    "Password previously created for this site.",
-                    Toast.LENGTH_LONG).show();
-            return;
-        }
+
 
         mGeneratePassword.setVisibility(View.GONE);
         mRegeneratePassword.setVisibility(View.VISIBLE);
         mGeneratedPasswordTextView.setText(passkey);
+    }
+
+    private void setTimestamp(long newTimestamp) {
+        timestamp = newTimestamp;
     }
 
     private void savePassword() throws JSONException {

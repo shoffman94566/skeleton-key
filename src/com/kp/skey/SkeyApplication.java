@@ -39,7 +39,8 @@ public class SkeyApplication extends Application {
 	public static boolean containsKey(String sitename) {
 		if (myMap == null)
 			myMap = SharedPrefs.getAll();
-		return myMap.containsKey(sitename);
+		String hashedSiteName = Util.md5(sitename);
+		return myMap.containsKey(hashedSiteName);
 	}
 
 	public static void put(String siteName, int size, String passkey, long timestamp,
