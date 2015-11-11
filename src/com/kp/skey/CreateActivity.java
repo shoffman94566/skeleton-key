@@ -40,6 +40,7 @@ public class CreateActivity extends FooterActivity {
     private EditText mCapsEditText;
     private EditText mNumeralsEditText;
     private EditText mSymbolsEditText;
+    private TextView mCharacterCategoryTextView;
 
     private void validateAtLeastOneCheckBoxChecked() {
 
@@ -61,6 +62,8 @@ public class CreateActivity extends FooterActivity {
         mNumeralsCheckbox = (CheckBox) findViewById(R.id.numerals_checkbox);
         mSymbolCheckbox = (CheckBox) findViewById(R.id.symbols_checkbox);
         mPasswordLength = (EditText) findViewById(R.id.password_length);
+
+        mCharacterCategoryTextView = (TextView) findViewById(R.id.character_category_textview);
 
         mGeneratePassword = (Button) findViewById(R.id.check_password_button);
         mRegeneratePassword = (Button) findViewById(R.id.regenerate_password_button);
@@ -172,6 +175,7 @@ public class CreateActivity extends FooterActivity {
         mAdvancedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mCharacterCategoryTextView.setText("Enter a value of 0-16 for each of the character categories below");
                 advancedModeActivated = true;
                 mCheckBoxContainer.setVisibility(View.GONE);
                 mEditTextContainer.setVisibility(View.VISIBLE);
