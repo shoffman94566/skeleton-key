@@ -109,14 +109,19 @@ public class CreateActivity extends FooterActivity {
 
                 if(mChangeValue) {
                     String siteName = mSiteName.getText().toString();
-                    if (siteName != null && siteName.length() != 0) {
+                    if (siteName != null && siteName.length() != 0 && SkeyApplication.containsKey(siteName)) {
                         updatePreviousPassword(siteName);
+                        try {
+                            generatePassword(true, siteName, timestamp);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    } else {
+                        Toast.makeText(CreateActivity.this,
+                                "There is no U-U password with that site name. Check the spelling.",
+                                Toast.LENGTH_LONG).show();
                     }
-                    try {
-                        generatePassword(true, siteName, timestamp);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
+
                 } else {
                     try {
                         generatePassword(false, siteName, timestamp);
